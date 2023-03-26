@@ -89,9 +89,8 @@ $sub-color: #09f3f386;
         
 
         & > * { 
-            @include size(75%, auto); 
-            box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
-            
+            @include size(85%, auto); 
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;   
         }
 
         .link { display: inline-block; }
@@ -103,23 +102,10 @@ $sub-color: #09f3f386;
 
             .title {
                 display: inline-block;
-
                 font-size: 1.2em;
-
-                margin-bottom: .5em;
-
-                position: relative;
-                z-index: 1;
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    @include size(100%, 60%);
-                    background: $sub-color;
-                    padding: 0 .5em;
-                    bottom: 0; left: -.5em;
-                    z-index: -1;
-                }
+                margin-bottom: .8em;
+                text-decoration: underline 2.5px double $sub-color;
+                text-underline-offset: 3px;
             }
 
             .desc {
@@ -211,22 +197,25 @@ $sub-color: #09f3f386;
 
 @include tablet() {
 
-#root {
-    & > * {
-        .head {
-            & + div { 
-                &.movie { padding: 150px clamp(30px, 8vw, 100px) 0; }
+    #root {
+        & > * {
+            .head {
+                & + div { 
+                    &.movie { padding: 150px clamp(30px, 8vw, 100px) 0; }
+                }
             }
         }
     }
-}
 
     .home {
         .movie-list {
             .movie {
-                width: clamp(360px, 22vw, 530px );
+                width: 410px;
                 .info {
-                    .title { font-size: clamp( 22px, 1.5em, 29px); }
+                    .title {
+                        font-size: clamp( 22px, 1.5em, 30px); 
+                        text-underline-offset: 4px;
+                    }
                     .desc { font-size: clamp( 16px, 1.3em, 22px); }
                 }
             }
