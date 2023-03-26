@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MovieList from "../components/MovieList";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 function Home() {
@@ -21,7 +22,7 @@ function Home() {
     }, []);
     return (
         <div className="home">
-            <Link to="/" className="head" >Movie App</Link>
+            <Header />
             {loading ? (
                 <p className="load">Loading...</p>
             ) : (
